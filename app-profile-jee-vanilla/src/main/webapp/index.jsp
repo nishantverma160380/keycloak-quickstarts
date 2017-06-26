@@ -18,30 +18,60 @@
 <%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-        <title>Keycloak Example App</title>
-
+        <style>
+            label {display: inline-block;width: 200px;text-align: right;margin-right: 10px;}
+            button {margin-left: 215px;}
+            form {background-color: #eee;border: 1px solid #666;padding-bottom: 1em;}
+            .error {color: #a30000;}
+        </style>
         <link rel="stylesheet" type="text/css" href="styles.css"/>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <title>NHS Health App</title>
+
     </head>
     <body>
+
         <jsp:useBean id="controller" class="org.keycloak.quickstart.profilejee.Controller" scope="request"/>
         <% controller.handleLogout(request); %>
-        
+
         <c:set var="isLoggedIn" value="<%=controller.isLoggedIn(request)%>"/>
         <c:if test="${isLoggedIn}">
             <c:redirect url="profile.jsp"/>
         </c:if>
 
-        <div class="wrapper" id="welcome">
-            <div class="menu">
-                <button name="loginBtn" onclick="location.href = 'profile.jsp'" type="button">Login</button>
-            </div>
-
+        <div class="wrapper">
             <div class="content">
-                <div class="message">Please login</div>
+                <div class="logo">
+                        <img src="images/nhs-logo.png" alt="NHS Logo" border="0" />
+                </div>
+                <h1>Welcome to NHS Digital</h1>
+
+                <p>&nbsp;</p>
+
+                <p>Single Sign On | <a href="profile.jsp">Please Login</a> </p>
+
+                <p>&nbsp;</p>
+
+                <p class="logos">
+                    <a href="http://www.keycloak.org/"><img src="images/keycloak_logo.png" alt="Keycloak" width="254" height="31" border="0"></a> &nbsp;
+                    <a href="http://www.jboss.org"><img src="images/jboss_community.png" alt="JBoss and JBoss Community" width="254" height="31" border="0"></a>
+                </p>
+
+                <p>&nbsp;</p>
+
             </div>
         </div>
+
+        <div class="wrapper">
+            <div class="content">
+                <div class="logo">
+                        <img src="images/nhs-approved.svg" alt="NHS Logo" border="0" />
+                </div>
+		</div></div>
+
     </body>
 </html>

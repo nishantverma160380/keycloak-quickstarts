@@ -16,8 +16,12 @@
  */
 package org.keycloak.quickstart.profilejee;
 
+import org.keycloak.KeycloakSecurityContext;
+import org.keycloak.representations.IDToken;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 /**
  * Controller simplifies access to the server environment from the JSP.
@@ -34,6 +38,33 @@ public class Controller {
 
     public boolean isLoggedIn(HttpServletRequest req) {
         return req.getUserPrincipal() != null;
+    }
+
+    public String getUserDetails(HttpServletRequest req) {
+        String nhsNo ="";
+        KeycloakSecurityContext session = (KeycloakSecurityContext) req.getAttribute(KeycloakSecurityContext.class.getName());
+
+        /*AccessToken accessToken = session.getToken();
+        accessToken.getAuthorization();*/
+
+        IDToken idToken = session.getIdToken();
+        req.setAttribute("email",idToken.getEmail());
+        req.setAttribute("username",idToken.getPreferredUsername());
+        req.setAttribute("fullName",idToken.getName());
+        req.setAttribute("first",idToken.getGivenName());
+        req.setAttribute("last",idToken.getFamilyName());
+
+        Map<String, Object> otherClaims = idToken.getOtherClaims();
+        if (otherClaims.containsKey("nhsNumber")) {
+            nhsNo = String.valueOf(otherClaims.get("nhsNumber"));
+        }
+        req.setAttribute("nhsNo",nhsNo);
+        //otherClaims.foreach((k,v) -> System.out.println("Item : " + k + " Value : " + v));
+        /*for (Map.Entry<String, Object> entry : otherClaims.entrySet()) {
+            System.out.println("Item : " + entry.getKey() + " Count : " + entry.getValue());
+        }*/
+
+        return nhsNo;
     }
 
 }

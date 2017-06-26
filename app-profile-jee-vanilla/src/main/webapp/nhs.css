@@ -1,0 +1,202 @@
+/*------------------------------------*\
+    RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0b1 | 201101 
+    NOTE:WORK IN PROGRESS
+    USE WITH CAUTION AND TEST WITH ABANDON */
+
+html,body,div,span,applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,big,cite,code,
+del,dfn,em,img,ins,kbd,q,s,samp,
+small,strike,strong,sub,sup,tt,var,
+b,u,i,center,
+dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary,
+time,mark,audio,video,.aspNetHidden,
+.logo.header-animation,
+.advert-banner,
+.banner-tab.download,
+.close,
+.download,
+.navigation,
+.site-nav,
+.selected,
+.dropdown,
+.sub-menu,
+.account,
+.gadgets,
+.gp,
+.advanced,
+.history,
+.user-details,
+.page,
+.list.widest,
+.box,
+.content,
+.box-title,
+.heading,
+.box-content,
+.record-tabs,
+.clear{
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    font:inherit;
+    vertical-align:baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section{
+    display:block;
+}
+body{
+    line-height:1;
+}
+ol,ul{
+    list-style:none;
+}
+blockquote,q{
+    quotes:none;
+}
+blockquote:before,blockquote:after,
+q:before,q:after{
+    content:’’;
+    content:none;
+}
+/* remember to define visible focus styles! 
+:focus{
+    outline:?????;
+} */
+
+/* remember to highlight inserts somehow! */
+ins{
+    text-decoration:none;
+}
+del{
+    text-decoration:line-through;
+}
+
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+
+
+
+
+/*------------------------------------*\
+    $MAIN
+\*------------------------------------*/
+/* GO! */
+
+body, p, li, div.login p, div.login li { font-family: arial; color: #231f20;}
+
+header div.banner div.logo {
+    margin-left: 0;
+    width: 79px;
+    height: 32px;
+    padding-top: 23px;
+}
+
+h1, h2, h3, div.login h2, div.login h3 { font-family: arial; color: #005eb8;}
+div.login div.login-details div.details h2, div.logo h2 { font-family: arial; color: #fff; padding:15px;}
+table, table th { font-family: arial;}
+
+a, a:link, a:hover, a:focus, a:visited, p a:link, div.login a, span.tab-button a, span.tab-button-active a { color: #005eb8; font-family: arial;}
+
+div.login div.login-details div.details, #record-tabs,#Record, div.box-title, table.results th { background-color: #005eb8; background: #005eb8; border-radius: 0px;}
+div.login div.login-details div.details h2 { background-image: none;}
+div#cookie { background: #005eb8;}
+div.content { border: none;}
+.input-dark {
+    border-radius: 0;
+    background: #fff;
+    border-color: #fff;
+}
+input[type="submit"].login, button.login {
+    background: #fff;
+    color: #005eb8;
+}
+
+input[type="submit"].login:hover, button.login:hover {
+    background: #005eb8;
+    color: #fff;
+}
+header {margin: 0; height: 80px;}
+header div.banner { max-width: 960px; margin: 0 auto; box-shadow: none; height: 80px;}
+#website-nav { display: none; }
+#navigation { background: #005eb8; height: 80px; margin: 0;}
+#navigation .site-nav { width: 960px; margin: 0 auto;}
+nav.site-nav ul li a, div.navigation button#LinkLogout { background: #005eb8; font-size: 0.9em; border-radius: none; border: 1px solid #fff; color: #fff; font-weight: normal; padding: 10px; border-bottom-right-radius: 0; border-bottom-left-radius: 0; margin: 25px 10px 10px 0;}
+nav.site-nav ul li a.selected { background: #005eb8;}
+#Record div.content { background: none;}
+#record-view { background: #fff; padding-top: 50px; }
+#record-tabs { position: relative; max-width: 960px; margin: 0 auto; }
+div.user-details { color: #fff; font-weight: normal; margin-top: 35px;}
+table.results { max-width: 960px; margin: 0 auto; padding-top: 100px;}
+table.results th { color: #0057b6; background: #ebebeb; padding: 15px; font-size: 18px;}
+tr.sub-header, table.results tr.sub-header td { color: #000; background: #ebebeb; padding: 5px 5px 5px 15px; font-size: 14px;}
+table.results td { padding: 15px;}
+div.page { margin: 0; padding-top: 40px }
+#Record div.content div.box-title { max-width: 960px; margin: 0 auto; }
+#Record div.box-title div.heading { background-image: none; }
+div.box-title div.heading { font-family: arial; font-weight: bold; font-size: 2em; padding: 0; padding-bottom: 20px; display: block;}
+#record-tabs span {
+    font-size: 1em;
+    margin: 10px 0 0 0;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+    display: block;
+    float: none;
+    border: 0;
+    background: none;
+    border-radius: none;
+    cursor: pointer;
+}
+#record-tabs span a { text-decoration: underline; padding-left: 20px; cursor: pointer; }
+#record-tabs span.selected a, #record-tabs span:hover a { color: #fff; background: transparent url('../images/wee-arrow.png') no-repeat 0 0 ; }
+#record-tabs span#tab-Summary, #record-tabs span#tab-Consultations, #record-tabs span#tab-Medication, #record-tabs span#tab-Immunisations, #record-tabs span#tab-Letters, #record-tabs span#tab-Results,
+#record-tabs span.selected#tab-Summary, #record-tabs span.selected#tab-Consultations, #record-tabs span.selected#tab-Medication, #record-tabs span.selected#tab-Immunisations, #record-tabs span.selected#tab-Letters, #record-tabs span.selected#tab-Results 
+{ background-image: none; }
+#record-tabs span.selected { background-color: transparent;}
+#Record div.content div.box-content { height: auto; overflow: visible;}
+
+#record-tabs span:hover { background-color: transparent;}
+div.panel-info { padding: 20px 0; width: 100%; background-color: #fff; display: block; }
+div.panel-tab { display: block; max-width: 960px; margin: 0 auto; background-color: #fff; text-align: left; float: none; }
+span.tab-button, span.tab-button-active { border: none; background-color: transparent; font-weight: normal; text-decoration: underline;}
+
+#Email, #Prescriptions, #Appointments, #Messages, #footer-copyright { display: none; }
+div.footer { background-color: #005eb8; padding: 50px 0;}
+div.footer ul { margin: 0 auto; width: 960px; }
+div.footer ul li { display: block; font-weight: normal; line-height: 1.3em; margin-top: 5px; }
+div.footer ul li a { font-weight: normal; text-decoration: underline;}
+
+
+
+
+div.boxdiv.box-title: after{padding-top: 0.5em;padding-bottom: 0.5em;background-image: none;border-radius: 3px;background-clip: padding-box;position: relative}
+div.box.open div.box-title: after{border-bottom-left-radius: 0;border-bottom-right-radius: 0}
+
+table.simple{width:100%}
+table.simple tr{text-align:left}td{position:relative}
+table.history{width:100%;font-size:0.8em;border:#0d60b5 1px solid;border-radius:5px;margin-top:0.5em}
+table.history tr{text-align:left}
+table.history th{padding-bottom:3px}
+table.history td{border-bottom:#c0c0c0 1px dotted}
+table.history .time{white-space:nowrap}
+
+.settings {padding-left:2.3em}
+.public{max-width:none;text-align:left;width:100%;min-height:calc(100vh - 21.0em)}
+.page-margin{margin-left: 20px;margin-right: 20px}
+
+#container{ width: 960px; margin: 0 auto;}

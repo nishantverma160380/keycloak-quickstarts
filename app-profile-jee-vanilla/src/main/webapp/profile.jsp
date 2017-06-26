@@ -1,50 +1,44 @@
-<!--
-JBoss, Home of Professional Open Source
-Copyright 2016, Red Hat, Inc. and/or its affiliates, and individual
-contributors by the @authors tag. See the copyright.txt in the
-distribution for a full listing of individual contributors.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-http://www.apache.org/licenses/LICENSE-2.0
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
-
-<%@page contentType="text/html" pageEncoding="ISO-8859-1" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
+<%@ page import="org.keycloak.representations.IDToken" %>
 <!DOCTYPE html>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-    <title>Keycloak Example App</title>
+    <title>NHS Health App</title>
     <link rel="stylesheet" type="text/css" href="styles.css"/>
 </head>
 <body>
 <jsp:useBean id="controller" class="org.keycloak.quickstart.profilejee.Controller" scope="request"/>
+<c:set var="name" value="<%=controller.getUserDetails(request)%>"/>
 
-<div class="wrapper" id="profile">
-    <div class="menu">
-        <button name="logoutBtn" onclick="location.href = 'index.jsp?logout=true'" type="button">Logout</button>
-    </div>
+    <div class="wrapper">
+        <div class="content">
+            <div class="logo">
+                <table width="100%"><tr width="100%"><td width="50%"><img src="images/nhs-logo.png" alt="NHS Logo" border="0" /></td>
+                    <td width="50%" align="right"><button name="logoutBtn" onclick="location.href = 'index.jsp?logout=true'" type="button">Logout</button></td>
+                </tr></table>
+            </div>
+            <p>&nbsp;</p>
 
-    <div class="content">
-        <div id="profile-content" class="message">
-            <table cellpadding="0" cellspacing="0">
-                <tr>
-                    <td class="label" colspan="2">You are logged in!</td>
-                </tr>
-                <tr>
-                    <td class="label">Principal</td>
-                    <td><span id="username"><%=request.getUserPrincipal().getName()%></span></td>
-                </tr>
-             </table>
+            <h1>Welcome <%=request.getAttribute("fullName") %> to NHS Digital</h1>
+            <h2>My Profile</h2>
+
+            <p>User Name | <%=request.getAttribute("username") %> </p>
+            <p>NHS Number | <%=request.getAttribute("nhsNo") %> </p>
+            <p>First Name | <%=request.getAttribute("first") %> </p>
+            <p>Last Name | <%=request.getAttribute("last") %> </p>
+            <p>Email Address | <%=request.getAttribute("email") %> </p>
+            <p>Principal ID | <%=request.getUserPrincipal().getName() %> </p>
+            <p>&nbsp;</p>
+
         </div>
     </div>
-</div>
+    <div class="wrapper">
+        <div class="content">
+            <div class="logo">
+                    <img src="images/nhs-approved.svg" alt="NHS Logo" border="0" />
+            </div>
+    </div></div>
 </body>
 </html>
